@@ -28,7 +28,7 @@ public_users.get("/isbn/:isbn", function (req, res) {
   if (books[isbn]) {
     return res.status(200).send(books[isbn]);
   }
-  return res.status(404).json({ message: "Book is not found." });
+  return res.status(404).json({ message: "Book not found." });
 });
 
 // Get book details based on author
@@ -71,7 +71,7 @@ public_users.get("/review/:isbn", function (req, res) {
   if (books[isbn]) {
     return res.status(200).send(books[isbn].reviews);
   }
-  return res.status(404).json({ message: "Book is not found." });
+  return res.status(404).json({ message: "Book not found." });
 });
 
 module.exports.general = public_users;
